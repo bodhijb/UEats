@@ -22,18 +22,20 @@ public class UberApp {
 	public void newCustomer(Customer customer) {		
 		if(!customers.contains(customer)) {
 			customers.add(customer);
+			System.out.println("Customer added");
 		} else {
-			
+			System.out.println("Customer already exists");			
 		}
-		
-		
-		
 	}
 	
 	public void newVendor(Eatery restaurant) {		
 		if(!eateries.contains(restaurant)) {
 			eateries.add(restaurant);
-		}		
+			System.out.println("Eatery added");
+		} else {
+			System.out.println("Eatery already exists");			
+		}	
+		
 	}
 	
 	public HashSet<Eatery> seachByTags(String... theseTypes) {
