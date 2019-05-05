@@ -48,6 +48,7 @@ public class UberApp {
 				}
 			}
 		}
+		System.out.println("Set being returned");
 		return set;		
 	}
 	
