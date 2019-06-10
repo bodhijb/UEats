@@ -1,46 +1,63 @@
 package app;
 
 import java.util.HashSet;
+
 import customer.Customer;
-import vendor.Eatery;
+import vendor.FoodVendor;
 
 public class UberApp {
+		
+	private Customer customer;
+	private FoodVendor vendor; 
+	private Basket basket;
+	private Delivery delivery;
+	private static HashSet<FoodVendor> vendors = new HashSet<>();
+	private static HashSet<Customer> customers = new HashSet<>();
+
+
+	public UberApp(String appCustomer, String appEatery, String appBasket, String appDelivery) {
+		super();
+		this.customer = new Customer();
+		this.vendor = new FoodVendor();
+		this.basket = new Basket();
+		this.delivery = new Delivery();
+	}
 	
-	private static HashSet<Customer> customers = new HashSet<>();;
-	private static HashSet<Eatery> eateries = new HashSet<>();
-	
-	
-	
+	public UberApp() {
+		
+	}
+
+
 	public static void main(String[] args) {
+
+		System.out.println("Hello Uber");
 		
 		
-		
+
+
+
+
+	}
+	
+	
+	public void makeAnOrder(FoodVendor eatery) {
+		basket.basketOrder(eatery);
 		
 	}
 	
 	
-	public void newCustomer(Customer customer) {		
-		if(!customers.contains(customer)) {
-			customers.add(customer);
-			System.out.println("Customer added");
-		} else {
-			System.out.println("Customer already exists");			
-		}
-	}
-	
-	public void newVendor(Eatery restaurant) {		
-		if(!eateries.contains(restaurant)) {
-			eateries.add(restaurant);
+	public void addNewEatery(FoodVendor restaurant) {
+		if(!vendors.contains(restaurant)) {
+			vendors.add(restaurant);
 			System.out.println("Eatery added");
-		} else {
-			System.out.println("Eatery already exists");			
-		}	
-		
+		} 
 	}
 	
-	public HashSet<Eatery> seachByTags(String... theseTypes) {
-		HashSet<Eatery> set = new HashSet<>();
-		one: for(Eatery eatery: eateries) {
+
+
+	public HashSet<FoodVendor> seachByTags(String... theseTypes) {
+		HashSet<FoodVendor> set = new HashSet<>();
+		one: for(FoodVendor eatery: vendors) {
 			two: for(String tag: theseTypes) {
 				if(eatery.getTags().contains(tag.toLowerCase())) {
 					set.add(eatery);
@@ -49,20 +66,22 @@ public class UberApp {
 			}
 		}
 		System.out.println("Set being returned");
-		return set;		
+		return set;
 	}
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

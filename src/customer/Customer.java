@@ -1,53 +1,54 @@
 package customer;
 
+import java.util.HashSet;
+
 import app.UberApp;
 
 public class Customer {
-	
+
 	private String username;
-	private Integer account;
+	private Integer accountNo;
 	private UberApp app = new UberApp();
 	
 	
-	private Customer(String username) {
+	
+	public Customer(String username, Integer accountNo, UberApp app) {
+		super();
 		this.username = username;
-		
-		
+		this.accountNo = accountNo;
+		this.app = app;
+	}
+	
+	
+
+	public Customer() {
+		super();
 	}
 
+
+
+	public void customerOrder() {
+		
+	}
 
 	public String getUsername() {
 		return username;
 	}
 
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
-
 	public Integer getAccount() {
-		return account;
+		return accountNo;
 	}
-
 
 	public void setAccount(Integer account) {
-		this.account = account;
+		this.accountNo = account;
 	}
-
 
 	public UberApp getApp() {
 		return app;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 
 }
